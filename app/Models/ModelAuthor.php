@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ModelBook extends Model
+class ModelAuthor extends Model
 {
     use HasFactory;
 
-    protected $table="book";
+    protected $table="authors";
 
     protected $fillable = [
         'title',
-        'id_user',
-        'pages',
-        'price'
+        'name',
+        'date',
+        'country',
+        'history'
     ];
 
     //Método de relacionamento um pra um
     public function relUsers(){
 
-        return $this->HasOne('App\Models\User', 'id', 'id_user');
-        return $this->HasOne('App\Models\ModelAuthor', 'id', 'id_author');
+        return $this->hasMany('App\Models\ModelBook', 'id_author');
     }
 }

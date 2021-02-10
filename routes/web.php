@@ -11,4 +11,5 @@ Route::post('/edit.do/{id}', 'App\Http\Controllers\BookController@update')->name
 Route::get('/delete{id}', 'App\Http\Controllers\BookController@destroy')->name('delete');
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/logout', 'App\Http\Controllers\Auth\LogOutController@logout')->name('logout');

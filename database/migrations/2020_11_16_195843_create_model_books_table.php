@@ -15,8 +15,10 @@ class CreateModelBooksTable extends Migration
     {
         Schema::create('book', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();//Não assinado
+            $table->unsignedInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('id_author');
+            $table->foreign('id_author')->references('id')->on('book')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->string('title');
             $table->integer('pages');
             $table->double('price', 10, 2);

@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,7 +7,7 @@
 
 <div class="container text-right mt-3 mb-4 ml-5">
     <a href="{{ route('create') }}">
-        <button class="btn btn-success">Cadastrar</button>
+        <button class="btn btn-success">Cadastrar Livro</button>
     </a>
 </div>
 
@@ -31,7 +31,7 @@
                 <th scope="row">{{ $book->id }}</th>
                 <td>{{ $book->title }}</td>
                 <td>{{ $user->name }}</td>
-                <td>{{ $book->price }}</td>
+                <td>R${{ $book->price }}</td>
                 <td>
                     <a href="{{ route('view', ['id'=>$book->id] )}}">
                         <button class="btn btn-primary btn-sm">Visualizar</button>

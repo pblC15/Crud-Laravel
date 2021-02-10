@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ModelBook;
+use App\Models\ModelAuthor;
 
 class BookController extends Controller
 {
     private $ObjUser;
     private $ObjBook;
+    private $ObjAuthors;
 
     public function __construct(){
 
         $this->ObjUser = new User();
         $this->ObjBook =  new ModelBook();
+        $this->ObjAuthors = new ModelAuthor();
     }
 
     /**
@@ -40,10 +43,11 @@ class BookController extends Controller
     public function create()
     {
         $users = $this->ObjUser->all();
+        $authors = $this->ObjAuthors->all();
 
-        return view('pages.create', compact('users'));
+        return view('pages.create', compact('users', 'authors'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
