@@ -13,3 +13,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/logout', 'App\Http\Controllers\Auth\LogOutController@logout')->name('logout');
+
+//Author
+Route::get('/createAuthor', 'App\Http\Controllers\AuthorController@index')->name('create.author');
+Route::post('/createAuthor.do', 'App\Http\Controllers\AuthorController@store')->name('createauthor.do');

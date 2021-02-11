@@ -12,11 +12,11 @@ class ModelAuthor extends Model
     protected $table="authors";
 
     protected $fillable = [
-        'title',
         'name',
         'date',
         'country',
-        'history'
+        'history',
+        'occupation'
     ];
 
     //Método de relacionamento um pra um

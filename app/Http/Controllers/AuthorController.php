@@ -9,13 +9,15 @@ use App\Models\ModelAuthor;
 
 class AuthorController extends Controller
 {
+    private $ObjUser;
+    private $ObjBook;
+    private $ObjAuthors;
 
+    public function __construct(){
 
-    public function __contruct(){
-
-        $ObjUser = User();
-        $ObjBook = ModelBook();
-        $ObjAuthor = ModelAuthor();
+        $this->ObjUser = new User();
+        $this->ObjBook = new ModelBook();
+        $this->ObjAuthors = new ModelAuthor();
     }
     /**
      * Display a listing of the resource.
@@ -24,7 +26,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.createAuthor');
     }
 
     /**
@@ -45,7 +47,19 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cadastro = $this->ObjAuthors->create([
+            "name"=>$request->name,
+            "dateNasc"=>$request->date,
+            "country"=>$request->country,
+            "occupation"=>$request->occupation,
+            "history"=>$request->history
+            
+        ]);
+
+        var_dump($cadastro);
+        // if($cadastro){
+        //     return redirect()->route('create');
+        // }
     }
 
     /**

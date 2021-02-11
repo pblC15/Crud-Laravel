@@ -11,12 +11,12 @@
 
     <div class="form-group">
       <label for="id_title">Título</label>
-      <input type="text" class="form-control form-control-lg" name="title" id="id_title" placeholder="ex: Os miseráveis" required="required">
+      <input type="text" class="form-control" name="title" id="id_title" placeholder="ex: Os miseráveis" required="required">
     </div>
 
     <div class="form-group">
       <label for="id_user">Escolha o Autor</label>
-      <select class="form-control form-control-lg" id="id_user" name="id_user" required="required">
+      <select class="form-control" id="id_user" name="id_user" required="required">
         <option value=''></option>
         @foreach($authors as $author)
 
@@ -25,17 +25,17 @@
         @endforeach
       </select>
 
-      <a class="btn btn-primary btn-sm mt-2" href="#">Cadastrar Autor</a>
+      <a class="btn btn-primary btn-sm mt-2" href="{{ route('create.author')}}">Cadastrar Autor</a>
     </div>
 
     <div class="form-group">
       <label for="id_pages">Páginas</label>
-      <input type="text" class="form-control form-control-lg" name="pages" id="id_pages" placeholder="ex: 500" required="required">
+      <input type="text" class="form-control" name="pages" id="id_pages" placeholder="ex: 500" required="required">
     </div>
     
     <div class="form-group">
       <label for="id_price">Preço</label>
-      <input type="text" class="form-control form-control-lg" name="price" id="id_price" placeholder="ex: 155.99" required="required">
+      <input type="text" class="form-control" name="price" id="id_price" placeholder="ex: 155.99" required="required">
     </div>
 
     <div class="text-left">
