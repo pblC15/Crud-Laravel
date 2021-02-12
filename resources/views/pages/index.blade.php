@@ -26,11 +26,12 @@
         @foreach($books as $book)
         @php 
             $user = $books->find($book->id)->relUsers;
+            
         @endphp
             <tr>
                 <th scope="row">{{ $book->id }}</th>
                 <td>{{ $book->title }}</td>
-                <td>{{ $user->name }}</td>
+                <td>{{ $authors->name }}</td>
                 <td>R${{ $book->price }}</td>
                 <td>
                     <a href="{{ route('view', ['id'=>$book->id] )}}">

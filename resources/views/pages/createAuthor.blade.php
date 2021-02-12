@@ -17,7 +17,7 @@
 
     <div class="form-group">
       <label for="id_born">Data de Nascimento: </label>
-      <input type="date" class="form-control" name="dateNasc" id="id_born" placeholder="ex: 500" required="required">
+      <input type="date" class="form-control" name="dateNasc" id="id_born" placeholder="ex: 99/99/9999" pattern="\d{1,2}/\d{1,2}/\d{4}" required="required">
     </div>
     
     <div class="form-group">
@@ -208,7 +208,7 @@
 
     <div class="form-group">
         <label for="id_history">Example textarea</label>
-        <textarea class="form-control" id="id_history" rows="15" cols="15"></textarea>
+        <textarea class="form-control" id="id_history" name="history" rows="15" cols="15"></textarea>
     </div>
 
     <div class="text-left">

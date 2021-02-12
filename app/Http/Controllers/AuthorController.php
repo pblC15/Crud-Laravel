@@ -49,17 +49,16 @@ class AuthorController extends Controller
     {
         $cadastro = $this->ObjAuthors->create([
             "name"=>$request->name,
-            "dateNasc"=>$request->date,
+            "date"=>$request->dateNasc,
             "country"=>$request->country,
             "occupation"=>$request->occupation,
             "history"=>$request->history
             
         ]);
 
-        var_dump($cadastro);
-        // if($cadastro){
-        //     return redirect()->route('create');
-        // }
+        if($cadastro){
+            return redirect()->route('create');
+        }
     }
 
     /**
