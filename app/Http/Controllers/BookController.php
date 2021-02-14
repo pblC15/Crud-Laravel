@@ -1,11 +1,14 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\ModelBook;
 use App\Models\ModelAuthor;
+
 
 class BookController extends Controller
 {
@@ -27,7 +30,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        
+
         $books = $this->ObjBook->all(); //obtém todos os registros da tabela book
         /*$books = $this->ObjBook->all()->sortBy('name');//Ordenar por nome */
         /*$books = $this->ObjBook->all()->sortByDesc('id');//Ordenar o id por ordem decrecente */
@@ -42,8 +45,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        $users = $this->ObjUser->all();
         $authors = $this->ObjAuthors->all();
+        $users = $this->ObjUser->all();
 
         return view('pages.create', compact('users', 'authors'));
     }
@@ -57,11 +60,15 @@ class BookController extends Controller
     //cadastrando um livro
     public function store(Request $request)
     {
+
+        $id_user = Auth::check() ? Auth::user()->id : null;
+
         $cadastro = $this->ObjBook->create([
+            'id_user'=>$id_user,
+            'id_author'=>$request->id_author,
             'title'=>$request->title,
             'pages'=>$request->pages,
-            'price'=>$request->price,
-            'id_user'=>$request->id_user
+            'price'=>$request->price,            
         ]);
         
         if($cadastro){

@@ -8,15 +8,15 @@
 
   <form action="{{ route('create.do')}}" method='post' name="formCad" id="formCad"> 
   @csrf 
-
     <div class="form-group">
       <label for="id_title">Título</label>
       <input type="text" class="form-control" name="title" id="id_title" placeholder="ex: Os miseráveis" required="required">
     </div>
 
     <div class="form-group">
-      <label for="id_user">Escolha o Autor</label>
-      <select class="form-control" id="id_user" name="id_user" required="required">
+      <label for="id_author">Escolha o Autor</label>
+
+      <select class="form-control" id="id_author" name="id_author" required="required">
         <option value=''></option>
         @foreach($authors as $author)
 

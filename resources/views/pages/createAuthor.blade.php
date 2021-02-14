@@ -11,7 +11,7 @@
   @method('post')
 
     <div class="form-group">
-      <label for="id_name">Título</label>
+      <label for="id_name">Nome: </label>
       <input type="text" class="form-control" name="name" id="id_name" placeholder="ex: Nome Autor do Livro" required="required">
     </div>
 
@@ -213,7 +213,7 @@
 
     <div class="text-left">
     <button type="submit" class="btn btn-success">Cadastrar</button>
-      <a class="btn btn-primary" href="{{ route('home')}}">
+      <a class="btn btn-primary" href="{{ route('create')}}">
           Voltar
       </a>
     </div>

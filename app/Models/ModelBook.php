@@ -12,8 +12,10 @@ class ModelBook extends Model
     protected $table="book";
 
     protected $fillable = [
-        'title',
+
         'id_user',
+        'id_author',
+        'title',
         'pages',
         'price'
     ];
@@ -22,6 +24,11 @@ class ModelBook extends Model
     public function relUsers(){
 
         return $this->HasOne('App\Models\User', 'id', 'id_user');
+        
+    }
+    public function relAuthor(){
+
         return $this->HasOne('App\Models\ModelAuthor', 'id', 'id_author');
+    
     }
 }
