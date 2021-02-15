@@ -17,7 +17,6 @@
       <label for="id_author">Escolha o Autor</label>
 
       <select class="form-control" id="id_author" name="id_author" required="required">
-        <option value=''></option>
         @foreach($authors as $author)
 
         <option value='{{ $author->id}}'>{{ $author->name }}</option>

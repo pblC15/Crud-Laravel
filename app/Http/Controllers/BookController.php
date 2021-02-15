@@ -65,7 +65,7 @@ class BookController extends Controller
 
         $cadastro = $this->ObjBook->create([
             'id_user'=>$id_user,
-            'id_author'=>$request->id_author,
+            "id_author"=>$request->id_author,
             'title'=>$request->title,
             'pages'=>$request->pages,
             'price'=>$request->price,            

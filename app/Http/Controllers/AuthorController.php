@@ -48,6 +48,7 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         $cadastro = $this->ObjAuthors->create([
+            
             "name"=>$request->name,
             "date"=>$request->dateNasc,
             "country"=>$request->country,

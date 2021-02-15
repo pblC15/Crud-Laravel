@@ -12,9 +12,8 @@ class ModelBook extends Model
     protected $table="book";
 
     protected $fillable = [
-
-        'id_user',
         'id_author',
+        'id_user',
         'title',
         'pages',
         'price'
